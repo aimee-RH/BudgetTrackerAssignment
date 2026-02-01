@@ -15,8 +15,16 @@ struct ExpenseDetailView: View {
         List {
             Section(header: Text("Expense Info")) {
                 // TODO: Create a row for editing the expense name
-                
+                TextField("Name", text: $expense.name)
+
                 // TODO: Create a row for editing the expense amount
+                HStack {
+                    Text("Amount")
+                    Spacer()
+                    TextField("Amount", value: $expense.amount, format: .number)
+                        .keyboardType(.decimalPad)
+                        .multilineTextAlignment(.trailing)
+                }
             }
             
         }
